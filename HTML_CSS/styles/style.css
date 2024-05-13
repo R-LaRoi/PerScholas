@@ -1,0 +1,38 @@
+caption {
+  border: 10px solid rgb(213, 86, 7);
+  padding: 30px;
+}
+
+table {
+  width: 400px;
+  height: 400px;
+  text-align: center;
+  background-color: rgb(213, 86, 7);
+  border-collapse: separate;
+  padding: 20px;
+}
+
+td {
+  border-radius: 5px;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: "Arial", Courier, monospace;
+  background-color: rgb(255, 255, 255);
+}
+
+td:hover {
+  background-color: rgb(227, 104, 48);
+  color: white;
+}
+
+.header {
+  font-family: "Arial", Courier, monospace;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.numbers {
+  font-size: 3rem;
+  background-color: rgb(255, 255, 255);
+}

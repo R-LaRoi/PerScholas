@@ -1,0 +1,96 @@
+body {
+  background-color: rgb(41, 41, 41);
+  padding: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.grid-container {
+  background: white;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  line-height: 1.2;
+  color: whitesmoke;
+  max-width: 90vw;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+.image {
+  padding: 2rem;
+  width: 500px;
+}
+
+.column-4 {
+  padding: 6rem;
+  background: rgb(49, 48, 48);
+}
+
+.section-1 {
+  color: #373736;
+  padding: 3rem;
+}
+
+.column-1 {
+  padding: 5rem;
+  line-height: 1.7;
+  background: #eb9832;
+}
+
+ul {
+  list-style: none;
+  line-height: 2;
+  font-size: 1;
+  color: rgb(177, 177, 177);
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  font-size: 1.3rem;
+  color: #eb9832;
+  padding: 0;
+}
+.name {
+  font-size: 6rem;
+  line-height: 0.8;
+  position: relative;
+  right: 4rem;
+}
+
+.name-sub {
+  position: relative;
+  right: 4rem;
+  bottom: 4rem;
+}
+
+.line {
+  height: 2px;
+  width: 350px;
+  background: white;
+}
+
+@media screen and (max-width: 768px) {
+  .grid-container {
+    background: white;
+    display: grid;
+    grid-template-columns: 1fr;
+    line-height: 1.2;
+    color: whitesmoke;
+  }
+  .name,
+  .name-sub {
+    left: 4rem;
+    width: 350px;
+  }
+  .image {
+    width: 400px;
+  }
+}
+
+.fa-square {
+  color: #eb9832ae;
+}
