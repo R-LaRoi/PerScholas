@@ -12,7 +12,8 @@ body {
   grid-template-columns: 1.5fr 1fr;
   line-height: 1.2;
   color: whitesmoke;
-  max-width: 90vw;
+  max-width: 70vw;
+  height: 95vh;
 }
 
 h3 {
@@ -31,6 +32,7 @@ h3 {
 .section-1 {
   color: #373736;
   padding: 3rem;
+  background-color: white;
 }
 
 .column-1 {
