@@ -1,0 +1,91 @@
+body {
+  background: rgb(9, 9, 121);
+  background: linear-gradient(
+    177deg,
+    rgba(9, 9, 121, 1) 35%,
+    rgba(152, 0, 255, 1) 100%
+  );
+  margin: 1rem;
+  color: rgb(136, 136, 136);
+  height: 100vh;
+}
+
+.user-container {
+  background-color: rgba(255, 255, 255, 0.315);
+  padding-bottom: 1rem;
+  border-radius: 20px;
+  margin: 3rem;
+}
+
+.profile-row-1 {
+  color: rgb(43, 43, 91);
+  border-radius: 0px;
+  font-size: 1.5rem;
+}
+
+.user-body {
+  display: flex;
+  margin: 3rem;
+}
+
+.user-card {
+  border-top: 10px solid rgb(59, 44, 131);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 15px;
+}
+.user-profile {
+  height: 40vh;
+  border-radius: 15px;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  padding: 2rem;
+  border-top: 10px solid rgb(59, 44, 131);
+}
+
+.card-row-3 {
+  height: 40vh;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.user-row3 {
+  margin-top: 2rem;
+
+  display: flex;
+}
+
+.card-title {
+  font-size: 3rem;
+  color: rgb(59, 44, 131);
+}
+
+.card-header {
+  font-size: 2rem;
+  color: rgb(253, 251, 255);
+  background: rgb(59, 44, 131);
+}
+
+.image {
+  width: 300px;
+  align-items: center;
+}
+
+.list-group-item {
+  border-bottom: 2px solid rgb(59, 44, 131);
+  background: #ffffff;
+  color: rgb(107, 106, 109);
+  font-size: 1.3rem;
+}
+
+.--btn {
+  width: 50%;
+  justify-content: center;
+  background: rgb(59, 44, 131);
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+.-ul {
+  margin-left: 25%;
+}
