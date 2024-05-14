@@ -1,0 +1,97 @@
+body {
+  background: rgb(131, 58, 180);
+  background: linear-gradient(
+    165deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(204, 11, 114, 1) 50%
+  );
+
+  padding: 4rem;
+  color: white;
+}
+
+.admin-container {
+  background-color: rgba(255, 255, 255, 0.953);
+
+  display: grid;
+  grid-template-columns: 0.4fr 1fr;
+  border-radius: 20px;
+}
+
+.admin-body {
+  background: rgba(241, 241, 241, 0.802);
+  padding: 4rem;
+  color: #545353;
+  height: 95vh;
+  border-radius: 20px;
+}
+
+.sidebar {
+  color: #a73288;
+  padding: 2rem;
+  background: white;
+  border-radius: 20px;
+}
+.dash-sq {
+  border: none;
+  height: 30vh;
+  margin-bottom: 2rem;
+}
+
+.dash-sm-row {
+  height: 20vh;
+  /* border: 2px solid green; */
+  margin-top: 3rem;
+}
+.card {
+  border-top: 15px solid #ff3380;
+  border-radius: 15px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.card-row-2 {
+  border: none;
+  height: 30vh;
+  border-top: 15px solid #8637b1;
+  padding: 3rem;
+}
+
+.card-row-3 {
+  height: 25vh;
+  background: #ffffff;
+  padding-top: 2rem;
+}
+.admin-row1 {
+  margin-top: rem;
+}
+
+.list-group {
+  margin-top: 3rem;
+}
+.list-group-item {
+  margin-top: 1rem;
+  height: 70px;
+  border: none;
+  background: #ffffff;
+  color: rgb(149, 32, 252);
+  font-size: 1.3rem;
+  border-radius: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.btn-primary {
+  background: transparent;
+  border: 2px solid #8637b1;
+  color: #545353;
+}
+
+.img-thumbnail {
+  border-radius: 10%;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+
+  padding-left: 7rem;
+}
