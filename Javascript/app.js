@@ -12,7 +12,7 @@ const n4 = 5;
 
 {
   let result = "";
-  (n1, n2, n3, n4 / 5) ? (result = true) : console.log("no");
+  (n1, n2, n3, n4) / 5 ? (result = true) : console.log("no");
   console.log(`It is ${result} all the numbers are divisible by 5.`);
 }
 
