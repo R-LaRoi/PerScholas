@@ -6,14 +6,13 @@
 const n1 = 10;
 const n2 = 15;
 const n3 = 20;
-const n4 = 5;
+const n4 = 4;
 
 //  Numbers are divisible by 5
 
 {
-  let result = "";
-  (n1, n2, n3, n4) / 5 ? (result = true) : console.log("no");
-  console.log(`It is ${result} all the numbers are divisible by 5.`);
+  let result = n1 % 5 && n2 % 5 && n3 % 5 && n4 % 5 === 0;
+  result === 0 ? console.log("true") : console.log("false");
 }
 
 // Check if the first number is larger than the last. Cache the result in a variable.
