@@ -1,7 +1,6 @@
-let onlyBtn = document.querySelector("#btn-js");
-onlyBtn.addEventListener("click", function () {
-  alert("DataManipulation");
-});
+// DATA MANIPULATION LAB
+
+//PART ONE  ---------------------------->
 
 // The initial numbers that must be verified.
 const n1 = 10;
@@ -34,48 +33,80 @@ console.log(` The answer is ${arithmeticChain}.`);
 const isOver25 = (n1, n2, n3, n4) > 25;
 console.log(` The numbers over 25 retun ${isOver25}.`);
 
-// Check one: add up to 50
-// This is a fairly simple operation using
-// arithmetic operators and a comparison.
-const isSum50 = n1 + n2 + n3 + n4 == 50;
+//PART TWO  ---------------------------->
 
-// Check two: at least two odd numbers
-// Here, we use modulus to check if something is odd.
-// Since % 2 is 0 if even and 1 if odd, we can use
-// arithmetic to count the total number of odd numbers.
-const isTwoOdd = (n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2;
+// Set up a program to answer the following questions:
 
-// Check three: no number larger than 25
-// This time, we use the OR operator to check
-// if ANY of the numbers is larger than 25.
+// if travelling at 75mph
 
-// Check four: all unique numbers
-// This is long, and there are more efficient
-// ways of handling it with other data structures
-// that we will review later.
-const isUnique =
-  n1 != n2 && n1 != n3 && n1 != n4 && n2 != n3 && n2 != n4 && n3 != n4;
+let tripMiles = 1500;
+let mph = 60;
+let mpg = 28;
+let budget = 175;
+let gallonPrice = 3;
+let totalGallons = budget / gallonPrice;
 
-// Here, we put the results into a single variable
-// for convenience. Note how we negate isOver25 using
-// the ! operator. We could also have tested for
-// "isUnder25" as an alternative.
-const isValid = isSum50 && isTwoOdd && !isOver25 && isUnique;
+// How many gallons of fuel will you need for the entire trip?
+if (mph === 75 && mpg === 23) {
+  let totalMpG = tripMiles / mpg;
+  console.log(`The total gallons will be ${totalMpG} at 75mph`);
 
-// Finally, log the results.
-console.log(isValid);
+  // How long with the trip take in hours?
+  let hours = tripMiles / 75;
+  console.log(`Drive will take ${hours} hours.`);
 
-// Here's another example of how this COULD be done,
-// but it SHOULD NOT be done this way. As programmers,
-// we break things into small, manageable pieces so that
-// they can be better understood, scaled, and maintained.
-const dontDoThis =
-  n1 + n2 + n3 + n4 == 50 &&
-  (n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2 &&
-  !(n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25) &&
-  n1 != n2 &&
-  n1 != n3 &&
-  n1 != n4 &&
-  n2 != n3 &&
-  n2 != n4 &&
-  n3 != n4;
+  // Will your budget be enough to cover the fuel expense?
+  {
+    totalGallons > totalMpG
+      ? console.log("yes, there is enough fuel")
+      : console.log("No, driver needs fuel.");
+  }
+}
+
+// if travelling at 60mph you the trip will take
+else if (mph === 60 && mpg === 28) {
+  let totalMpG = tripMiles / mpg;
+  console.log(`The total gallons will be ${totalMpG} at 60mph`);
+
+  let hours = tripMiles / 60;
+  console.log(`Drive will take ${hours} hours.`);
+
+  {
+    totalGallons > totalMpG
+      ? console.log("yes, there is enough fuel")
+      : console.log("No, driver needs fuel.");
+  }
+}
+
+// if travelling at 55mph you the trip will take
+else if (mph === 55 && mpg === 30) {
+  let totalMpG = tripMiles / mpg;
+  console.log(`The total gallons will be ${totalMpG} at 55mph`);
+  let hours = tripMiles / 55;
+  console.log(`Drive will take ${hours} hours.`);
+
+  {
+    totalGallons > totalMpG
+      ? console.log("Yes, there is enough fuel.")
+      : console.log("No, driver needs fuel.");
+  }
+
+  // Compare the results when traveling at an average of 55, 60, and 75 miles per hour. Which makes the most sense for the trip?
+
+  // The driver can travel at 60mph which and require 53.5 gallons and stay within the budget.
+  {
+    if ((totalGallons < totalMpG && mph === 60) || 55 || 75) {
+      console.log("take this trip");
+    } else {
+      console.log("reconsider");
+    }
+  }
+}
+
+// --------------------------------
+
+// button on index.html screen -->
+let onlyBtn = document.querySelector("#btn-js");
+onlyBtn.addEventListener("click", function () {
+  alert("DataManipulation");
+});
