@@ -1,6 +1,6 @@
 let onlyBtn = document.querySelector("#btn-js");
 onlyBtn.addEventListener("click", function () {
-  alert("surprise");
+  alert("DataManipulation");
 });
 
 // The initial numbers that must be verified.
@@ -8,6 +8,31 @@ const n1 = 10;
 const n2 = 15;
 const n3 = 20;
 const n4 = 5;
+
+//  Numbers are divisible by 5
+
+{
+  let result = "";
+  (n1, n2, n3, n4 / 5) ? (result = true) : console.log("no");
+  console.log(`It is ${result} all the numbers are divisible by 5.`);
+}
+
+// Check if the first number is larger than the last. Cache the result in a variable.
+
+let largerNumber = n1 > n4;
+console.log(`It is ${largerNumber} the first number is larger.`);
+
+// Accomplish the following arithmetic chain:
+
+let arithmeticChain = ((n1 - n2) * n3) % n4;
+console.log(` The answer is ${arithmeticChain}.`);
+
+// Change the way that isOver25 calculates
+// Original calculation --->
+// const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
+
+const isOver25 = (n1, n2, n3, n4) > 25;
+console.log(` The numbers over 25 retun ${isOver25}.`);
 
 // Check one: add up to 50
 // This is a fairly simple operation using
@@ -23,7 +48,6 @@ const isTwoOdd = (n1 % 2) + (n2 % 2) + (n3 % 2) + (n4 % 2) >= 2;
 // Check three: no number larger than 25
 // This time, we use the OR operator to check
 // if ANY of the numbers is larger than 25.
-const isOver25 = n1 > 25 || n2 > 25 || n3 > 25 || n4 > 25;
 
 // Check four: all unique numbers
 // This is long, and there are more efficient
