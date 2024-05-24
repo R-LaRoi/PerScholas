@@ -1,4 +1,4 @@
-// ---- Part One
+//  Part One: ---------------------
 
 const csvData =
   "ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Blaine,Quiz Master,58\n98,Bill,Doctor’s Assistant,26";
@@ -36,4 +36,22 @@ parentArray.push(cellZero, cellOne, cellTwo, cellThree);
 
 console.log(parentArray);
 
+// Part Three:  --------------------
+
+const objData = {};
+for (let keys of cellZero) {
+  objData[keys] = "";
+}
+
+console.log(objData);
+
 //
+//   id: "",
+//   name: "",
+//   occupation: "",
+//   age: "",
+// };
+
+// csvObject = { cellOne, cellTwo, cellThree };
+
+// console.log(csvObject);
