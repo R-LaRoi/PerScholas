@@ -12,4 +12,7 @@ let cellZero = csvArray[0].split(",");
 let cellOne = csvArray[1].split(",");
 let cellTwo = csvArray[2].split(",");
 let cellThree = csvArray[3].split(",");
+
 console.log(cellOne);
+
+//  ---------------
