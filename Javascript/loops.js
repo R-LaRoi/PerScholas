@@ -26,7 +26,7 @@ for (let num = 1; num <= 100; num++) {
 //  1 is not a prime number
 //  if it can be divided by more than
 
-let arbNumber = 13;
+let arbNumber = 9;
 
 while (true) {
   let primeNumber = true;
