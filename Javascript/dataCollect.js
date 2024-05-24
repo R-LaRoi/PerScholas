@@ -46,12 +46,3 @@ for (let keys of cellZero) {
 console.log(objData);
 
 //
-//   id: "",
-//   name: "",
-//   occupation: "",
-//   age: "",
-// };
-
-// csvObject = { cellOne, cellTwo, cellThree };
-
-// console.log(csvObject);
