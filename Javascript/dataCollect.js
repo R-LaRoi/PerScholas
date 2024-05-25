@@ -29,20 +29,33 @@ let csvColumn3 = cellZero.length;
 console.log(csvColumn0);
 
 //  create parent array
-
 let parentArray = [];
-
 parentArray.push(cellZero, cellOne, cellTwo, cellThree);
-
 console.log(parentArray);
 
 // Part Three:  --------------------
 
-const objData = {};
-for (let keys of cellZero) {
-  objData[keys] = "";
-}
+let newObject = {};
+newObject = { ...parentArray };
 
-console.log(objData);
+// separate arrays
+let array1 = newObject[1];
+let array2 = newObject[2];
+let array3 = newObject[3];
 
-//
+console.log(newObject);
+
+// converts arrays into nested objects inside of a a new array
+
+let thisArray = [];
+let assignedObjects = [
+  Object.assign({}, array1),
+  Object.assign({}, array2),
+  Object.assign({}, array3),
+];
+
+thisArray.push(assignedObjects);
+
+console.log(thisArray);
+
+// Part Four
