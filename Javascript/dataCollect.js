@@ -55,7 +55,20 @@ let assignedObjects = [
 ];
 
 thisArray.push(assignedObjects);
-
 console.log(thisArray);
 
-// Part Four
+//  Part Four ------------------
+// Remove the last element from the sorted array.
+
+// thisArray[0].pop();
+// console.log(thisArray);
+
+// let newCSVobj = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
+
+// thisArray[0].push(newCSVobj);
+// console.log(thisArray);
+
+// Part Five  -------
+
+// let changeData = thisArray[0].flat();
+// console.log(changeData);
