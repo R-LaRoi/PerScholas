@@ -15,7 +15,7 @@ let cellOne = csvArray[1].split(",");
 let cellTwo = csvArray[2].split(",");
 let cellThree = csvArray[3].split(",");
 
-console.log(cellOne);
+console.log(cellZero, cellOne, cellTwo, cellThree);
 
 //  PART TWO: ---------------
 
@@ -39,36 +39,70 @@ let newObject = {};
 newObject = { ...parentArray };
 
 // separate arrays
+let array0 = newObject[0];
 let array1 = newObject[1];
 let array2 = newObject[2];
 let array3 = newObject[3];
 
-console.log(newObject);
+// forEach string inside of array convert to  lowercase
+
+array0.forEach((element) => {
+  let newStr = element.toLowerCase("");
+  console.log(newStr);
+});
 
 // converts arrays into nested objects inside of a a new array
 
-let thisArray = [];
-let assignedObjects = [
-  Object.assign({}, array1),
-  Object.assign({}, array2),
-  Object.assign({}, array3),
-];
+//  add key/value
+let objZero = {
+  id: array0[0],
+  name: array0[1],
+  occupation: array0[2],
+  age: array0[3],
+};
 
-thisArray.push(assignedObjects);
-console.log(thisArray);
+let objOne = {
+  id: array1[0],
+  name: array1[1],
+  occupation: array1[2],
+  age: array1[3],
+};
+
+let objTwo = {
+  id: array2[0],
+  name: array2[1],
+  occupation: array2[2],
+  age: array3[3],
+};
+
+let objThree = {
+  id: array3[0],
+  name: array3[1],
+  occupation: array3[2],
+  age: array3[3],
+};
+
+//  nest objects
+
+let nestCSVobject = [];
+
+nestCSVobject.push(objZero, objOne, objTwo, objThree);
+
+console.log(nestCSVobject);
 
 //  Part Four ------------------
 // Remove the last element from the sorted array.
 
-// thisArray[0].pop();
-// console.log(thisArray);
+// let removeItem = nestCSVobject[0].pop();
+// console.log(removeItem);
 
 // let newCSVobj = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
 
-// thisArray[0].push(newCSVobj);
-// console.log(thisArray);
+// let pushItem = nestCSVobject[0].pop();
+// [0].push(newCSVobj);
+// console.log(pushItem);
 
 // Part Five  -------
 
-// let changeData = thisArray[0].flat();
+// let changeData = newObject.toString();
 // console.log(changeData);

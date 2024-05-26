@@ -103,3 +103,19 @@ for (const key in nollywood) {
 // nested objects
 // predefined methods for objects
 //  console.log(nollywood.engine.size)
+
+// let thisArray = [];
+// let assignedObjects = [
+//   Object.assign({}, array1),
+//   Object.assign({}, array2),
+//   Object.assign({}, array3),
+// ];
+
+// thisArray.push(assignedObjects);
+// console.log(thisArray);
+
+// let oneto = array1[0];
+
+// id: item[0],
+// name: item.array1,
+// occupation: item.array1,
