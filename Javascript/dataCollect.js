@@ -96,6 +96,7 @@ console.log(nestCSVarrObj);
 let removeItem = nestCSVarrObj.slice(0, -1);
 console.log(removeItem);
 
+// add item
 let newCSVobj = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
 
 let pushItem = nestCSVarrObj.push(newCSVobj);
