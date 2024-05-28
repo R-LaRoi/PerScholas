@@ -84,25 +84,39 @@ let objThree = {
 
 //  nest objects
 
-let nestCSVobject = [];
+let nestCSVarrObj = [];
 
-nestCSVobject.push(objZero, objOne, objTwo, objThree);
+nestCSVarrObj.push(objZero, objOne, objTwo, objThree);
 
-console.log(nestCSVobject);
+console.log(nestCSVarrObj);
 
 //  Part Four ------------------
 // Remove the last element from the sorted array.
 
-// let removeItem = nestCSVobject[0].pop();
-// console.log(removeItem);
+let removeItem = nestCSVarrObj.slice(0, -1);
+console.log(removeItem);
 
-// let newCSVobj = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
+let newCSVobj = { id: "48", name: "Barry", occupation: "Runner", age: "25" };
 
-// let pushItem = nestCSVobject[0].pop();
-// [0].push(newCSVobj);
-// console.log(pushItem);
+let pushItem = nestCSVarrObj.push(newCSVobj);
 
 // Part Five  -------
+// transform the data back into CSV format.
 
-// let changeData = newObject.toString();
-// console.log(changeData);
+let convertData = "";
+for (let key in objOne) {
+  if (objOne.hasOwnProperty(key)) {
+    convertData += `${key} ${objOne[key]}` + ",";
+  }
+}
+for (let key in objTwo) {
+  if (objTwo.hasOwnProperty(key)) {
+    convertData += `${key} ${objTwo[key]}` + ",";
+  }
+}
+for (let key in objThree) {
+  if (objThree.hasOwnProperty(key)) {
+    convertData += `${key} ${objThree[key]}` + ",";
+  }
+}
+console.log(convertData.split("\n"));
