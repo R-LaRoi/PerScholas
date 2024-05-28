@@ -121,3 +121,18 @@ for (let key in objThree) {
   }
 }
 console.log(convertData.split("\n"));
+
+let obj = {
+  fruit: "apple",
+
+  vegetable: "carrot",
+};
+
+// obj.fruit;
+
+// obj[0];
+let arr = ["one", "two", "three"];
+
+let array = {};
+
+console.log(arr.indexOf("two"));
