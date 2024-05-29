@@ -1,6 +1,8 @@
-// Take an array of numbers and return the sum.
+// Part 1: Thinking Functionally
 
-const sumArr = [100, 40, 80, 30];
+// 1. Take an array of numbers and return the sum.
+
+const sumArr1 = [90, 60, 80, 30, 500];
 
 function returnSum(numbers) {
   let sum = 0;
@@ -10,9 +12,9 @@ function returnSum(numbers) {
   console.log(sum);
 }
 
-returnSum(sumArr);
+returnSum(sumArr1);
 
-// Take an array of numbers and return the average.
+// 2. Take an array of numbers and return the average.
 
 let avArrNum = [59, 69, 79, 89, 99];
 
@@ -26,7 +28,7 @@ function avgArray(avgNum) {
 
 avgArray(avArrNum);
 
-// Take an array of strings and return the longest string
+// 3. Take an array of strings and return the longest string
 
 arrOfStr = ["changeling", "his house", "nightmare before christmas"];
 
@@ -44,7 +46,7 @@ function showStringLength(strArr) {
 
 showStringLength(arrOfStr);
 
-// Take an array of strings, and a number and return an array of the strings that are longer than the given number.
+// 4. Take an array of strings, and a number and return an array of the strings that are longer than the given number.
 
 num1rapArray = [
   "gunna",
@@ -76,7 +78,7 @@ function givenNumber(arrayValues) {
 
 givenNumber(num1rapArray);
 
-// Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+// 5. Take a number, n, and print every number between 1 and n without using loops. Use recursion.
 
 let arbNumber = 19;
 
@@ -89,7 +91,10 @@ console.log(useRecursion(arbNumber));
 
 useRecursion(arbNumber);
 
-// Use callback functions alongside Array methods to accomplish the following:
+// Part 2: Thinking Methodically --------------
+
+//  Use callback functions alongside Array methods to accomplish the following:
+
 let tabluarData = [
   { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
   { id: "48", name: "Barry", occupation: "Runner", age: "25" },
@@ -98,19 +103,70 @@ let tabluarData = [
   { id: "7", name: "Bilbo", occupation: "None", age: "111" },
 ];
 
+// 1.  Sort the array by age.
+
+let newObject = {};
+newObject = { ...tabluarData };
+console.log(newObject);
+// get age inside of objects
+
+let age0 = newObject[0].age;
+let age1 = newObject[1].age;
+let age2 = newObject[2].age;
+let age3 = newObject[3].age;
+let age4 = newObject[4].age;
+
+// create age array
+let agesArray = [];
+
+agesArray.push(age0, age1, age2, age3, age4);
+
 // Sort the array by age.
-console.log(tabluarData);
+agesArray.sort(function (n1, n2) {
+  return n1 - n2;
+});
 
-let values = Object.values(tabluarData[0].age);
-console.log(values);
-// console.log(newObject[0].age);
-// Filter the array to remove entries with an age greater than 50.
+console.log(agesArray);
 
-// Map the array to change the “occupation” key to “job” and increment every age by 1.
+//2. Filter the array to remove entries with an age greater than 50.
+
+let filterAge = agesArray.filter(function (num) {
+  if (num > 50) return num;
+});
+
+console.log(filterAge);
+
+// 3. Map the array to change the “occupation” key to “job” and increment every age by 1.
 
 // Use the reduce method to calculate the sum of the ages.
 
+// ---- Note: used  a number constructor to convert ageString into a numerical value
+function convertArray(age) {
+  return Number(age);
+}
+// variable maps through the agesArray, converts and returns numerical age array
+let allAges = agesArray.map(convertArray);
+console.log(allAges);
+
+function useReduction(num1, num2) {
+  let sum = 0;
+  sum += num1 + num2;
+  return sum;
+}
+console.log(allAges.reduce(useReduction));
+
+let sumResult = allAges.reduce(useReduction);
+
 // Then use the result to calculate the average age.
+
+function averageAge(ageArr) {
+  // take the sumResult variable and divide by the the length of the allAges array
+
+  let avgAge = sumResult / ageArr.length;
+  console.log(Math.round(avgAge));
+}
+
+averageAge(allAges);
 
 // Part 3: Thinking Critically --- for this section, develop functions that accomplish the following:
 
