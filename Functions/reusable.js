@@ -28,27 +28,85 @@ avgArray(avArrNum);
 
 // Take an array of strings and return the longest string
 
-//  iterate over array
-//  get length of each string
-// compare string 1/2/3
-
-function showStringLength(strArr) {
-  let strLength = [];
-  strArr.forEach((element) => {
-    strLength.push(element.length);
-    console.log(strLength);
-  });
-}
-
 arrOfStr = ["changeling", "his house", "nightmare before christmas"];
 
-const strLength = showStringLength(arrOfStr);
-
-function showStringLength(strArr) {}
+function showStringLength(strArr) {
+  // init variable
+  let lgString = "";
+  // loop through array and compare the length
+  strArr.forEach((element) => {
+    if (element.length > lgString.length) {
+      lgString = element;
+    }
+    console.log(lgString);
+  });
+}
 
 showStringLength(arrOfStr);
 
 // Take an array of strings, and a number and return an array of the strings that are longer than the given number.
 
-// For example, stringsLongerThan(['say', 'hello', 'in', 'the', 'morning'], 3); would return ["hello", "morning"].
+num1rapArray = [
+  "gunna",
+  "key glock",
+  "rick ross",
+  "moneybagg yo",
+  "yo gotti",
+  "ghetts",
+  8,
+];
+
+let rapValue = "";
+let newRapArray = [];
+
+function givenNumber(arrayValues) {
+  arrayValues.forEach((element) => {
+    if (typeof element === "number") {
+      rapValue = element;
+      console.log(rapValue);
+    }
+    arrayValues.forEach((newElement) => {
+      if (newElement.length > rapValue) {
+        newRapArray = newElement;
+      }
+      console.log(newRapArray);
+    });
+  });
+}
+
+givenNumber(num1rapArray);
+
 // Take a number, n, and print every number between 1 and n without using loops. Use recursion.
+
+let arbNumber = 19;
+
+function useRecursion(aNumber) {
+  let count = 1;
+  if (aNumber < count) return [];
+  return [aNumber, ...useRecursion(aNumber - 1)];
+}
+console.log(useRecursion(arbNumber));
+
+useRecursion(arbNumber);
+
+// Use callback functions alongside Array methods to accomplish the following:
+
+// Sort the array by age.
+
+// Filter the array to remove entries with an age greater than 50.
+
+// Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+// Use the reduce method to calculate the sum of the ages.
+
+// Then use the result to calculate the average age.
+
+// Part 3: Thinking Critically --- for this section, develop functions that accomplish the following:
+
+// Take an object and increment its age field.
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+
+// For each of the functions above, if the object does not yet contain an age field, create one and set it to 0.
+
+// Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.

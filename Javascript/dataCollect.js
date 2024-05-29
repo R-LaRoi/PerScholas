@@ -105,6 +105,7 @@ let pushItem = nestCSVarrObj.push(newCSVobj);
 // transform the data back into CSV format.
 
 let convertData = "";
+
 for (let key in objOne) {
   if (objOne.hasOwnProperty(key)) {
     convertData += `${key} ${objOne[key]}` + ",";
@@ -121,18 +122,3 @@ for (let key in objThree) {
   }
 }
 console.log(convertData.split("\n"));
-
-let obj = {
-  fruit: "apple",
-
-  vegetable: "carrot",
-};
-
-// obj.fruit;
-
-// obj[0];
-let arr = ["one", "two", "three"];
-
-let array = {};
-
-console.log(arr.indexOf("two"));

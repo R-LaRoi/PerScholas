@@ -147,3 +147,15 @@ let returnSum = function (numbers) {
   console.log(sum);
 };
 console.log(returnSum(numArr));
+
+arrOfStr = ["changeling", "his house", "nightmare before christmas"];
+
+function showStringLength(strArr) {
+  let strLength = [];
+  strArr.forEach((element) => {
+    strLength.push(element.length);
+    console.log(strLength);
+  });
+}
+
+showStringLength(arrOfStr);
