@@ -136,9 +136,7 @@ let filterAge = agesArray.filter(function (num) {
 
 console.log(filterAge);
 
-// 3. Map the array to change the “occupation” key to “job” and increment every age by 1.
-
-// Use the reduce method to calculate the sum of the ages.
+// 4.Use the reduce method to calculate the sum of the ages.
 
 // ---- Note: used  a number constructor to convert ageString into a numerical value
 function convertArray(age) {
@@ -167,6 +165,16 @@ function averageAge(ageArr) {
 }
 
 averageAge(allAges);
+
+// 3. Map the array to change the “occupation” key to “job” and increment every age by 1.
+
+function increaseAge(agesArr) {
+  for (let i = 0; i < agesArr.length; i++) {
+    agesArr[i] += 1;
+  }
+  console.log(agesArr);
+}
+increaseAge(allAges);
 
 // Part 3: Thinking Critically --- for this section, develop functions that accomplish the following:
 
