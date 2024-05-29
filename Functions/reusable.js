@@ -180,8 +180,39 @@ increaseAge(allAges);
 
 // Take an object and increment its age field.
 
-// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+let anObject = {
+  id: "63",
+  name: "Blaine",
+  occupation: "Quiz Master",
+  age: "58",
+};
 
-// For each of the functions above, if the object does not yet contain an age field, create one and set it to 0.
+function increaseAge(passObj) {
+  let getAge = passObj.age;
+  let addAge = Number(getAge) + 1;
+
+  passObj.age = addAge;
+  console.log(passObj);
+}
+
+increaseAge(anObject);
+
+// Take an object, make a copy, and increment the age field of the copy. Return the copy.
+let objectCopy = { ...anObject };
+
+function makeCopy(objCopy) {
+  let newAge = Number(objCopy.age) + 1;
+  objCopy.age = newAge;
+  return objCopy;
+}
+
+console.log(makeCopy(objectCopy));
 
 // Also, add (or modify, as appropriate) an updated_at field that stores a Date object with the current time.
+
+//  add to an existing object
+console.log(objectCopy);
+let addDate = new Date();
+
+let updatedObj = { ...objectCopy, updatedAt: { addDate } };
+console.log(updatedObj);
