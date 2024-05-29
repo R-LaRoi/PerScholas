@@ -90,9 +90,20 @@ console.log(useRecursion(arbNumber));
 useRecursion(arbNumber);
 
 // Use callback functions alongside Array methods to accomplish the following:
+let tabluarData = [
+  { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+  { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+  { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+  { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+  { id: "7", name: "Bilbo", occupation: "None", age: "111" },
+];
 
 // Sort the array by age.
+console.log(tabluarData);
 
+let values = Object.values(tabluarData[0].age);
+console.log(values);
+// console.log(newObject[0].age);
 // Filter the array to remove entries with an age greater than 50.
 
 // Map the array to change the “occupation” key to “job” and increment every age by 1.
