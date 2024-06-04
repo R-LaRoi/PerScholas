@@ -1,13 +1,11 @@
-//guess the three consecutives numbers that equals  24  answer: 7 , 8 , 9
-
-// //guess the three consecutives numbers that equals 18 answer: 5,6,7
-// //guess the three consecutives numbers that equals 27 answer: 8,9,10
+// BOM lab --- features two questions and three multiple choice answers
 
 // first prompt
 window.confirm("Hi! Are you ready to play Guess Three?");
 
-// ask for userName
+// ask for a userName
 let userName = window.prompt("what is your name?");
+
 //  prompts a greeting
 if (userName !== null) {
   document.getElementById("app").innerHTML =
@@ -19,12 +17,8 @@ if (userName !== null) {
 //  create start button
 let startBtn = document.getElementById("start-btn");
 
-//  when the button is clicked show the numbers table
+//  when the button is clicked show the the options to select
 console.log(startBtn);
-
-// 8 9 10
-//   7 8 9
-// 9 10 11
 
 let showOptions = [
   { id: 1, answers: [8, 9, 10] },
@@ -32,39 +26,76 @@ let showOptions = [
   { id: 3, answers: [9, 10, 11] },
 ];
 
-let answerOptions = [];
-//
+let secondQuestion = [
+  { id: 1, answers: [18, 19, 20] },
+  { id: 2, answers: [4, 5, 6] },
+  { id: 3, answers: [5, 6, 7] },
+];
 
+let answer = showOptions[1].id;
+let answer2 = showOptions[0].id;
+let answer3 = showOptions[2].id;
+
+let answerGame = secondQuestion[2].id;
+let answerq2 = secondQuestion[0].id;
+let answerq3 = secondQuestion[1].id;
+
+//  shows first question when the button is clicked
 startBtn.addEventListener("click", () => {
-  alert("Guess three consecutive numbers that equals 24 ");
+  alert("Guess three consecutive numbers equal to 24... ");
 
-  // let number = (document.createElement("h2").innerHTML = "24");
+  // maps through the options for question
   document.getElementById("app").innerHTML = showOptions.map((numArray) => {
-    // answerOptions.push(numArray.id);
-    // console.log(answerOptions);
-    // when a specific button is selected ----
-
+    // numArray.replace(",", "");
+    // adds id to input  and shows the options----
     return `<div>
-   <input type="radio" id="${numArray.id}" name="answer-1" value="">${numArray.answers}</input></div>`;
+   <input type="radio" id="${numArray.id}" name="" value="">${numArray.answers}</input></div>`;
   });
 
-  let answer = answerOptions[1];
+  // add event listener to correct answer
+  let radioSelectAnswer = document.getElementById(`${answer}`);
+  radioSelectAnswer.addEventListener("click", () => {
+    window.alert("Awesome " + userName + "! You are correct!");
+    window.alert(
+      "Next question! Guess three consecutive numbers equal to 18..."
+    );
 
-  let radioSelect = document.getElementById("aOne");
-  radioSelect.addEventListener("click", () => {
-    alert("thats correct");
+    // display second question when first question is answered correctly
+    document.getElementById("app").innerHTML = secondQuestion.map(
+      (numArray) => {
+        // adds id to input  and shows the options----
+        return `<div>
+   <input type="radio" id="${numArray.id}" name="answer-1" value="">${numArray.answers}</input></div>`;
+      }
+    );
+
+    let radioSelectGame = document.getElementById(`${answerGame}`);
+    let selection3 = document.getElementById(`${answerq2}`);
+    let selection4 = document.getElementById(`${answerq3}`);
+    radioSelectGame.addEventListener("click", () => {
+      window.alert(userName + "! You are a winner!");
+      // ends the game
+      document.getElementById(
+        "app"
+      ).innerHTML = `<h1> Thank you ${userName} for playing Guess Three!<h1>`;
+    });
+
+    selection3.addEventListener("click", () => {
+      window.alert(userName + " you are incorrect. Let's try again!");
+    });
+    selection4.addEventListener("click", () => {
+      window.alert(userName + " you are incorrect. Let's try again!");
+    });
+  });
+
+  // add event listener to incorrect answers
+  let selection = document.getElementById(`${answer2}`);
+  let selection1 = document.getElementById(`${answer3}`);
+
+  selection.addEventListener("click", () => {
+    window.alert(userName + " you are incorrect. Let's try again!");
+  });
+  selection1.addEventListener("click", () => {
+    window.alert(userName + " you are incorrect. Let's try again!");
   });
 });
-
-//  show numbers one through ten
-//  select 3 numbers
-// if numbers are selected
-//  compare selected  numbers to results array
-// prompt a window saying yes that is correct
-// if the answers do not match the answers in the results array
-// prompt a window saying that is incorrect
-//  and try again
-
-// let questionOne = window.prompt(
-//   "Guess the three consecutive numbers equal to 24"
-// );
