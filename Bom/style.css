@@ -1,0 +1,19 @@
+body {
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1067fe;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+/* input:hover {
+  border: 3px solid #ffffff;
+  color: #212c91;
+  background: #ffffff;
+} */
