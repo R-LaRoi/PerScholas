@@ -1,7 +1,6 @@
 //guess the three consecutives numbers that equals  24  answer: 7 , 8 , 9
 
 // //guess the three consecutives numbers that equals 18 answer: 5,6,7
-
 // //guess the three consecutives numbers that equals 27 answer: 8,9,10
 
 // first prompt
@@ -28,9 +27,9 @@ console.log(startBtn);
 // 9 10 11
 
 let showOptions = [
-  [8, 9, 10],
-  [7, 8, 9],
-  [9, 10, 11],
+  { id: 1, answers: [8, 9, 10] },
+  { id: 2, answers: [7, 8, 9] },
+  { id: 3, answers: [9, 10, 11] },
 ];
 
 let answerOptions = [];
@@ -39,16 +38,22 @@ let answerOptions = [];
 startBtn.addEventListener("click", () => {
   alert("Guess three consecutive numbers that equals 24 ");
 
+  // let number = (document.createElement("h2").innerHTML = "24");
   document.getElementById("app").innerHTML = showOptions.map((numArray) => {
-    answerOptions.push(numArray);
+    // answerOptions.push(numArray.id);
+    // console.log(answerOptions);
+    // when a specific button is selected ----
 
-    return `<div> 
-    <li><input type="radio" id="aOne" name="answer-1" value="">${numArray}</input><li></div>`;
+    return `<div>
+   <input type="radio" id="${numArray.id}" name="answer-1" value="">${numArray.answers}</input></div>`;
   });
 
   let answer = answerOptions[1];
 
-  answer.addEventListener();
+  let radioSelect = document.getElementById("aOne");
+  radioSelect.addEventListener("click", () => {
+    alert("thats correct");
+  });
 });
 
 //  show numbers one through ten
