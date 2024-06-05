@@ -15,7 +15,8 @@ body {
 input[type="radio"] {
   appearance: none;
   background: rgb(255, 4, 234);
-  margin: 2px;
+  margin: -5px;
+  margin-right: 15px;
   font: inherit;
   color: currentColor;
   width: 1.5rem;
@@ -26,7 +27,6 @@ input[type="radio"] {
 }
 
 input:hover {
-  content: "✓";
   background-color: yellow;
 }
 
@@ -35,8 +35,20 @@ button {
   border: none;
   padding: 1rem;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 button:hover {
   background: rgb(255, 4, 234);
+}
+
+.radio-label {
+  color: #1067fe;
+  letter-spacing: 1px;
+  width: 40%;
+  background-color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 4px;
+  transition: background-color 0.2s, border-color 0.2s;
+  padding: 12px 50px;
 }

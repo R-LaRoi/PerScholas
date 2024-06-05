@@ -48,8 +48,8 @@ startBtn.addEventListener("click", () => {
   document.getElementById("app").innerHTML = showOptions.map((numArray) => {
     // numArray.replace(",", "");
     // adds id to input  and shows the options----
-    return `<div>
-   <input type="radio" id="${numArray.id}" name="" value="">${numArray.answers}</input></div>`;
+    return `<div><label class='radio-label'>
+   <input type="radio" id="${numArray.id}" name="" value="">${numArray.answers}</input></label></div>`;
   });
 
   // add event listener to correct answer
@@ -64,8 +64,8 @@ startBtn.addEventListener("click", () => {
     document.getElementById("app").innerHTML = secondQuestion.map(
       (numArray) => {
         // adds id to input  and shows the options----
-        return `<div>
-   <input type="radio" id="${numArray.id}" name="answer-1" value="">${numArray.answers}</input></div>`;
+        return `<div class="radios">
+   <label class='radio-label'><input type="radio" id="${numArray.id}"  value="">${numArray.answers}</input></label></div>`;
       }
     );
 
