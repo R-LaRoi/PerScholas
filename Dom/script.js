@@ -1,9 +1,32 @@
 // Menu data structure
 var menuLinks = [
   { text: "about", href: "/about" },
-  { text: "catalog", href: "/catalog" },
-  { text: "orders", href: "/orders" },
-  { text: "account", href: "/account" },
+  {
+    text: "catalog",
+    href: "#",
+    subLinks: [
+      { text: "all", href: "/catalog/all" },
+      { text: "top selling", href: "/catalog/top" },
+      { text: "search", href: "/catalog/search" },
+    ],
+  },
+  {
+    text: "orders",
+    href: "#",
+    subLinks: [
+      { text: "new", href: "/orders/new" },
+      { text: "pending", href: "/orders/pending" },
+      { text: "history", href: "/orders/history" },
+    ],
+  },
+  {
+    text: "account",
+    href: "#",
+    subLinks: [
+      { text: "profile", href: "/account/profile" },
+      { text: "sign out", href: "/account/signout" },
+    ],
+  },
 ];
 
 // Part 1 ------
@@ -52,3 +75,45 @@ let theLinks = menuLinks.map((aLink) => {
   // 5. append element
   topMenuEl.append(aTag);
 });
+
+// ----DOM MANIPULATION PART TWO LAB ----------
+
+// 1. select and cache element
+let subMenuEl = document.getElementById("sub-menu");
+console.log(subMenuEl);
+
+// 2. set height to element
+subMenuEl.style.height = "100%";
+
+// 3. set background
+subMenuEl.style.background = "var(--sub-menu-bg)";
+
+//  4. add a class
+subMenuEl.classList.add("flex-around");
+
+//  set position and hide
+subMenuEl.style.position = "absolute";
+subMenuEl.style.top = "0";
+
+//  Part 4: Menu Interactions
+
+//1.  select and cache <a> tags
+let topMenuLinks = document.getElementsByTagName("a");
+console.log(topMenuLinks);
+
+// 2. Attach a click
+function addCLickTopMenu() {
+  topMenuEl.addEventListener("click", () => {
+    if (topMenuEl) {
+      console.log("clicked");
+    }
+    return topMenuLinks;
+  });
+  console.log(menuLinks);
+}
+addCLickTopMenu();
+
+// 3. add active class
+topMenuLinks.classList.add = "a:active";
+
+console.log(topMenuLinks);
