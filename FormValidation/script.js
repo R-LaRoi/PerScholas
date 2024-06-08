@@ -67,7 +67,6 @@ loginFormElement.addEventListener("submit", (e) => {
       userPassword === formStorage.password
     ) {
       alert("Logged in");
-
       loginFormElement.reset();
     }
     return;

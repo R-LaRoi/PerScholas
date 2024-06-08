@@ -26,7 +26,12 @@
             title="Must contain a minimum of 4 characters and include two unique characters" />
           <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-          <input name="email" type="email" placeholder="Email" required />
+          <input
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            pattern="^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}$" />
 
           <span class="input-icon"> <i class="fa-solid fa-envelope"></i></span
           ><br />
