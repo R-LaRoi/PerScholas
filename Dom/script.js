@@ -64,7 +64,7 @@ console.log(topMenuEl);
 
 // 1. iterate over links data
 
-let theLinks = menuLinks.map((aLink) => {
+menuLinks.map((aLink) => {
   // 2. create an a element
   // 3. add href
   let aTag = document.createElement("a");
@@ -97,23 +97,58 @@ subMenuEl.style.top = "0";
 
 //  Part 4: Menu Interactions
 
-//1.  select and cache <a> tags
-let topMenuLinks = document.getElementsByTagName("a");
-console.log(topMenuLinks);
+let topMenuLinks = document.querySelectorAll("#top-menu a");
 
-// 2. Attach a click
-function addCLickTopMenu() {
-  topMenuEl.addEventListener("click", () => {
-    if (topMenuEl) {
-      console.log("clicked");
+function showMenu() {
+  topMenuEl.addEventListener("click", (e) => {
+    e.preventDefault();
+    if (!Array.from(topMenuLinks).includes(e.target)) {
+      return;
     }
-    return topMenuLinks;
+
+    topMenuLinks.forEach((tag) => {
+      tag.addEventListener("click", function () {
+        topMenuLinks.forEach((tag) => {
+          // if the tag is active
+          if (tag.classList.contains("active")) {
+            tag.classList.remove("active");
+            subMenuEl.style.top = "0";
+          }
+          if (!tag.classList.contains("active"));
+          {
+            this.classList.add("active");
+            subMenuEl.style.top = "100%";
+          }
+        });
+        menuLinks.forEach((menuItem) => {
+          if (menuItem.text === e.target.textContent) {
+            if (menuItem.subLinks) {
+              if (!e.target.classList.contains("active")) {
+                subMenuEl.style.top = "100%";
+                buildSubmenu(menuItem);
+              } else {
+                subMenuEl.style.top = "0";
+              }
+            }
+          }
+        });
+      });
+    });
   });
-  console.log(menuLinks);
 }
-addCLickTopMenu();
 
-// 3. add active class
-topMenuLinks.classList.add = "a:active";
+showMenu();
 
-console.log(topMenuLinks);
+function buildSubmenu(menuLink) {
+  subMenuEl.textContent = "";
+  menuLink.subLinks.forEach((subLink) => {
+    subNav(subMenuEl, subLink);
+  });
+}
+
+function subNav(sbmenu, link) {
+  const anchorEl = document.createElement("a");
+  anchorEl.setAttribute("href", link.href);
+  anchorEl.textContent = link.text;
+  sbmenu.append(anchorEl);
+}

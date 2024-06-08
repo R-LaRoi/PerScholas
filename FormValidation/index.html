@@ -2,12 +2,8 @@
 <html>
   <head>
     <title>Form Validation Practice</title>
-    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <!-- Font Awesome for Icons -->
-    <script
-      src="https://kit.fontawesome.com/d8f052c6cf.js"
-      crossorigin="anonymous"></script>
-    <script type="text/javascript" src="script.js"></script>
   </head>
   <body>
     <!-- Container for entire form. -->
@@ -19,29 +15,48 @@
 
         <!-- Registration Form -->
         <form id="registration">
-          <input name="username" type="text" placeholder="Username" />
+          <input
+            name="username"
+            type="text"
+            placeholder="Username"
+            minlength="4"
+            required
+            pattern="[a-zA-Z0-9]*[\S][\w]{4,}"
+            value=""
+            title="Must contain a minimum of 4 characters and include two unique characters" />
           <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-          <input name="email" type="text" placeholder="Email" />
-          <span class="input-icon"><i class="fa-solid fa-envelope"></i></span
+          <input name="email" type="email" placeholder="Email" required />
+
+          <span class="input-icon"> <i class="fa-solid fa-envelope"></i></span
           ><br />
 
-          <input name="password" type="text" placeholder="Password" />
+          <input
+            name="password"
+            type="text"
+            placeholder="Password"
+            min="12"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
+            title="Must contain at least one number,  
+               one uppercase and lowercase letter, and at least 12 characters" />
           <span class="input-icon"><i class="fa-solid fa-key"></i></span><br />
 
           <input
             name="passwordCheck"
             type="text"
-            placeholder="Repeat Password" />
+            placeholder="Repeat Password"
+            required
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$" />
           <span class="input-icon"><i class="fa-solid fa-key"></i></span
           ><br /><br />
 
           <div class="flex-row">
-            <input name="terms" type="checkbox" />
+            <input name="terms" type="checkbox" id="checkbox" required />
             <label for="terms"
               >I agree to the&nbsp;<a href="#">Terms of Use</a>.</label
             >
-            <input type="submit" value="Register" />
+            <input type="submit" value="Register" id="submit-btn" />
           </div>
         </form>
       </div>
@@ -52,11 +67,11 @@
         <p>Login using your account information.</p>
 
         <!-- Login Form -->
-        <form id="login" style="border-bottom: 1px solid lightgray">
-          <input name="username" type="text" placeholder="Username" />
+        <form id="login" style="border-bottom: 1px solid lightgray" required>
+          <input name="username" type="text" placeholder="Username" required />
           <span class="input-icon"><i class="fa-solid fa-user"></i></span><br />
 
-          <input name="password" type="text" placeholder="Password" />
+          <input name="password" type="text" placeholder="Password" required />
           <span class="input-icon"><i class="fa-solid fa-key"></i></span
           ><br /><br />
 
@@ -75,4 +90,8 @@
     <!-- Error Display Container -->
     <div id="errorDisplay"></div>
   </body>
+  <script
+    src="https://kit.fontawesome.com/d8f052c6cf.js"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="script.js"></script>
 </html>
