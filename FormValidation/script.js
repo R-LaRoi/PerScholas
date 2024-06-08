@@ -18,7 +18,9 @@ formElement.addEventListener("submit", (e) => {
 
   function checkPassword() {
     if (formData.password !== formData.passwordCheck) {
-      console.log("Passwords do not match");
+      alert("Passwords do not match");
+    } else if (formData.username === formData.password) {
+      alert("Choose another username");
     } else if (formData.password.value === formData.passwordCheck.value) {
       localStorage.setItem("registrationForm", JSON.stringify(formData));
 
@@ -47,7 +49,7 @@ loginFormElement.addEventListener("submit", (e) => {
   loginData.username = loginFormElement.username.value;
   loginData.password = loginFormElement.password.value;
 
-  let userLogin = loginData.username;
+  let userLogin = loginData.username.toLowerCase("");
   let userPassword = loginData.password;
 
   let dataStored = localStorage.getItem("registrationForm");
@@ -64,7 +66,7 @@ loginFormElement.addEventListener("submit", (e) => {
       userLogin === formStorage.username &&
       userPassword === formStorage.password
     ) {
-      alert("logged in");
+      alert("Logged in");
 
       loginFormElement.reset();
     }
