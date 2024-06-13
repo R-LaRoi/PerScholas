@@ -1,13 +1,12 @@
 let counter = 1;
 
+function increment() {
+  counter++;
+  increment();
+}
+
 try {
-  function increment() {
-    if (counter >= 1) {
-      counter++;
-      return increment();
-    }
-  }
+  increment();
 } catch (error) {
   console.log(counter);
 }
-increment();
