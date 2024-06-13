@@ -109,3 +109,9 @@ let onlyBtn = document.querySelector("#btn-js");
 onlyBtn.addEventListener("click", function () {
   alert("DataManipulation");
 });
+
+function solveMeFirst(a, b) {
+  return console.log(a + b);
+}
+
+solveMeFirst(2, 3);
