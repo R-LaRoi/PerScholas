@@ -4,11 +4,10 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .only-btn {
-  background: #20d058;
+  background: #058b46;
   color: white;
   border: none;
   border-radius: 10px;
@@ -17,7 +16,7 @@ body {
 }
 
 .only-btn:hover {
-  background: rgb(16, 110, 41);
+  background: rgb(203, 87, 15);
 }
 
 h1 {
