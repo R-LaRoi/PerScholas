@@ -104,6 +104,7 @@ class Adventurer extends Character {
 }
 
 // Part Five --------
+
 // Factories are classes that generate objects according to the factory’s instance properties.
 // As an example, let’s look at how we might create many “healer” role adventurers using a factory:
 // class AdventurerFactory {
