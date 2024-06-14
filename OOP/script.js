@@ -45,7 +45,6 @@ class Character {
 }
 
 // Part Three -------------------
-
 class Adventurer extends Character {
   constructor(name, role) {
     super(name);
@@ -60,6 +59,22 @@ class Adventurer extends Character {
   static roles = ["fighter", "healer", "wizard"];
   static checkRole(role) {
     return this.roles.includes(role);
+  }
+
+  static duel(adventurer) {
+    let adRoll = adventurer.roll();
+    let adRoll2 = adventurer.roll();
+    if (adRoll < adRoll2) {
+      let adRoll = adRoll - 1;
+      adventurer.health - adRoll;
+    }
+    if (adRoll > adRoll2) {
+      let adRoll2 = adRoll2 - 1;
+      adventurer.health - adRoll2;
+    }
+    if (adventurer.health <= 50) {
+      console.log(`the winner is ...`);
+    }
   }
 }
 
@@ -84,45 +99,45 @@ robin.companion.companion = new Companion("Frank", "Flea", [
   "sunglasses",
 ]);
 
-// Part 4 -------------------
-// add static max_health to character class
-class Adventurer extends Character {
-  constructor(name, role) {
-    super(name);
-    this.role = role;
-    this.inventory.push("bedroll", "50 gold coins");
-  }
-  scout() {
-    console.log(`${this.name} is scouting ahead...`);
-    super.roll();
-  }
-  static max_health = 100;
-  static roles = ["fighter", "healer", "wizard"];
-  static checkRole(role) {
-    return this.roles.includes(role);
-  }
-}
+console.log(robin);
 
-// Part Five --------
+// Part 4 - 6   -------------------
 
-// Factories are classes that generate objects according to the factory’s instance properties.
-// As an example, let’s look at how we might create many “healer” role adventurers using a factory:
-// class AdventurerFactory {
-//   constructor (role) {
+// class Adventurer extends Character {
+//   constructor(name, role) {
+//     super(name);
 //     this.role = role;
-//     this.adventurers = [];
+//     this.inventory.push("bedroll", "50 gold coins");
 //   }
-//   generate (name) {
-//     const newAdventurer = new Adventurer(name, this.role);
-//     this.adventurers.push(newAdventurer);
+//   scout() {
+//     console.log(`${this.name} is scouting ahead...`);
+//     super.roll();
 //   }
-//   findByIndex (index) {
-//     return this.adventurers[index];
+//   static max_health = 100;
+//   static roles = ["fighter", "healer", "wizard"];
+//   static checkRole(role) {
+//     return this.roles.includes(role);
 //   }
-//   findByName (name) {
-//     return this.adventurers.find((a) => a.name === name);
+//   duel(adventurer) {
+//     let adRoll = adventurer.roll();
+//     let adRoll2 = adventurer.roll();
+//     if (adRoll < adRoll2) {
+//       let adRoll = adRoll - 1;
+//       adventurer.health - adRoll;
+//     }
+//     if (adRoll > adTwo) {
+//       let adRoll2 = adRoll2 - 1;
+//       adventurer.health - adRoll2;
+//     }
+//     if (adventurer.health <= 50) {
+//       console.log(`the winner is ...`);
+//     }
 //   }
 // }
 
-// const healers = new AdventurerFactory("Healer");
-// const robin = healers.generate("Robin");
+let figOne = new Adventurer("Stone", "Timekeeper");
+
+let figTwo = new Adventurer("Jade", "Healer");
+
+console.log(figTwo, figOne);
+Adventurer.duel(figOne, figTwo);
