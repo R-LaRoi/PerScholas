@@ -44,7 +44,7 @@ class Character {
   }
 }
 
-// Part Three -------------------
+// Part Three - Six -------------------
 class Adventurer extends Character {
   constructor(name, role) {
     super(name);
@@ -101,40 +101,6 @@ robin.companion.companion = new Companion("Frank", "Flea", [
 ]);
 
 console.log(robin);
-
-// Part 4 - 6   -------------------
-
-// class Adventurer extends Character {
-//   constructor(name, role) {
-//     super(name);
-//     this.role = role;
-//     this.inventory.push("bedroll", "50 gold coins");
-//   }
-//   scout() {
-//     console.log(`${this.name} is scouting ahead...`);
-//     super.roll();
-//   }
-//   static max_health = 100;
-//   static roles = ["fighter", "healer", "wizard"];
-//   static checkRole(role) {
-//     return this.roles.includes(role);
-//   }
-//   duel(adventurer) {
-//     let adRoll = adventurer.roll();
-//     let adRoll2 = adventurer.roll();
-//     if (adRoll < adRoll2) {
-//       let adRoll = adRoll - 1;
-//       adventurer.health - adRoll;
-//     }
-//     if (adRoll > adTwo) {
-//       let adRoll2 = adRoll2 - 1;
-//       adventurer.health - adRoll2;
-//     }
-//     if (adventurer.health <= 50) {
-//       console.log(`the winner is ...`);
-//     }
-//   }
-// }
 
 let figOne = new Adventurer("Stone", "Timekeeper");
 
