@@ -61,16 +61,17 @@ class Adventurer extends Character {
     return this.roles.includes(role);
   }
 
-  static duel(adventurer) {
+  static duel(adventurerTwo) {
     let adRoll = adventurer.roll();
-    let adRoll2 = adventurer.roll();
+    let adRoll2 = adventurerTwo.roll();
+
     if (adRoll < adRoll2) {
-      let adRoll = adRoll - 1;
-      adventurer.health - adRoll;
+      adventurer.health--;
+      console.log(`the winner is ${this.name}`);
     }
     if (adRoll > adRoll2) {
-      let adRoll2 = adRoll2 - 1;
-      adventurer.health - adRoll2;
+      adventurerTwo.health--;
+      console.log(`the winner is ${adventurerTwo.name}`);
     }
     if (adventurer.health <= 50) {
       console.log(`the winner is ...`);
