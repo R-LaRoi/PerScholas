@@ -1,3 +1,5 @@
+let apiKey = `live_pSmjFQzPtXrYMiFp0YUHtvsMopyYu9WtRlGN5YMsY0kBnrvMaQJegT69HodpyRd2`;
+
 // <!--
 // // The breed selection input element.
 // const breedSelect = document.getElementById("breedSelect");
