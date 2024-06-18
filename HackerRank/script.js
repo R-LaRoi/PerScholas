@@ -1,195 +1,207 @@
-function compareTriplets(a, b) {
-  for (i = 0; i < a.length; i++) {
-    if (a[i] > b[i]) {
-      return console.log(a[i]);
-    } else if (a[i] < b[i]) {
-      return console.log(b[i]);
-    } else if (a[i] === 0) {
-      return 0;
-    }
+function aVeryBigSum(ar) {
+  // ar.shift();
+  let total = 0;
+  for (let num in ar) {
+    total += ar[num];
   }
+  console.log(total);
+  return total;
 }
-compareTriplets([1, 2, 3], [3, 2, 1]);
-compareTriplets([7, 12, 43], [63, 94, 1]);
+
+aVeryBigSum([5, 1000000001, 1000000002, 1000000003, 1000000004, 1000000005]);
 
 // function compareTriplets(a, b) {
-//   a.length == b.length && a.every((element, index) => element === a[index]);
+//   for (i = 0; i < a.length; i++) {
+//     if (a[i] > b[i]) {
+//       return console.log(a[i]);
+//     } else if (a[i] < b[i]) {
+//       return console.log(b[i]);
+//     } else if (a[i] === 0) {
+//       return 0;
+//     }
+//   }
 // }
-
 // compareTriplets([1, 2, 3], [3, 2, 1]);
 // compareTriplets([7, 12, 43], [63, 94, 1]);
 
-//  Factory Function returns an object
-function Shop(location, employees, departments) {
-  return {
-    location,
-    employees,
-    departments,
-    greeting: function () {
-      document.write(
-        `<h1>There are ${employees} employees working at the ${location} store.`
-      );
-    },
-  };
-}
+// // function compareTriplets(a, b) {
+// //   a.length == b.length && a.every((element, index) => element === a[index]);
+// // }
 
-let boston = Shop("boston", 100, "4");
-console.log(boston);
+// // compareTriplets([1, 2, 3], [3, 2, 1]);
+// // compareTriplets([7, 12, 43], [63, 94, 1]);
 
-//  Constructor Function uses this. and new keyword
-function ShopTwo(location, employees, departments) {
-  this.location = location;
-  this.employees = employees;
-  this.departments = departments;
-  this.greeting = function () {
-    document.write(
-      `<h1>There are ${employees} employees working at the ${location} store.`
-    );
-  };
-}
+// //  Factory Function returns an object
+// function Shop(location, employees, departments) {
+//   return {
+//     location,
+//     employees,
+//     departments,
+//     greeting: function () {
+//       document.write(
+//         `<h1>There are ${employees} employees working at the ${location} store.`
+//       );
+//     },
+//   };
+// }
 
-let miami = new ShopTwo("miami", 80, "4");
-console.log(miami.greeting());
+// let boston = Shop("boston", 100, "4");
+// console.log(boston);
 
-class Cookies {
-  constructor(flavor, diet, type) {
-    this.flavor = flavor;
-    this.diet = diet;
-    this.type = type;
-    this.request = function () {
-      document.write(`<h1>You like ${this.flavor}<h1>`);
-    };
-  }
-}
+// //  Constructor Function uses this. and new keyword
+// function ShopTwo(location, employees, departments) {
+//   this.location = location;
+//   this.employees = employees;
+//   this.departments = departments;
+//   this.greeting = function () {
+//     document.write(
+//       `<h1>There are ${employees} employees working at the ${location} store.`
+//     );
+//   };
+// }
 
-let chocolateChip = new Cookies("chocolate-chip", "vegan", "fresh");
-let OatmealRaisin = new Cookies("oatmeal raisin", "gluten-free", "fresh");
-chocolateChip.request();
-OatmealRaisin.request();
+// let miami = new ShopTwo("miami", 80, "4");
+// console.log(miami.greeting());
 
-class Designers {
-  constructor(brand, product, season) {
-    this.brand = brand;
-    this.product = product;
-    this.season = season;
-    this.shopping = function () {
-      document.write(
-        `<p> ${this.brand} has a new collection for ${this.season}</p>`
-      );
-    };
-  }
-}
+// class Cookies {
+//   constructor(flavor, diet, type) {
+//     this.flavor = flavor;
+//     this.diet = diet;
+//     this.type = type;
+//     this.request = function () {
+//       document.write(`<h1>You like ${this.flavor}<h1>`);
+//     };
+//   }
+// }
 
-let Dries = new Designers("Dries Van Noten", "dresses", "fall");
+// let chocolateChip = new Cookies("chocolate-chip", "vegan", "fresh");
+// let OatmealRaisin = new Cookies("oatmeal raisin", "gluten-free", "fresh");
+// chocolateChip.request();
+// OatmealRaisin.request();
 
-Dries.shopping();
+// class Designers {
+//   constructor(brand, product, season) {
+//     this.brand = brand;
+//     this.product = product;
+//     this.season = season;
+//     this.shopping = function () {
+//       document.write(
+//         `<p> ${this.brand} has a new collection for ${this.season}</p>`
+//       );
+//     };
+//   }
+// }
 
-class Shoes extends Designers {
-  constructor(style, color, season) {
-    super(Dries);
-    this.style = style;
-    this.color = color;
-    this.season = season;
-  }
-}
+// let Dries = new Designers("Dries Van Noten", "dresses", "fall");
 
-const tabitha = new Shoes("sandal", "maron", "spring");
-console.log(tabitha);
+// Dries.shopping();
 
-for (let key in tabitha) {
-  console.log(key, tabitha[key]);
-  // returns the object properties, brand, style, color,season
-}
+// class Shoes extends Designers {
+//   constructor(style, color, season) {
+//     super(Dries);
+//     this.style = style;
+//     this.color = color;
+//     this.season = season;
+//   }
+// }
 
-for (let key in tabitha) {
-  if (typeof tabitha[key] !== "function") console.log(key, tabitha[key]);
+// const tabitha = new Shoes("sandal", "maron", "spring");
+// console.log(tabitha);
 
-  // returns the object properties, brand, style, color,season
-}
+// for (let key in tabitha) {
+//   console.log(key, tabitha[key]);
+//   // returns the object properties, brand, style, color,season
+// }
 
-// get all the keys of an object
-let keys = Object.keys(tabitha);
+// for (let key in tabitha) {
+//   if (typeof tabitha[key] !== "function") console.log(key, tabitha[key]);
 
-console.log(keys);
+//   // returns the object properties, brand, style, color,season
+// }
 
-if ("style" in tabitha) console.log("yes");
+// // get all the keys of an object
+// let keys = Object.keys(tabitha);
 
-class StopWatch {
-  constructor(start, duration, stop, reset) {
-    this.start = start;
-    this.duration = duration;
-    this.stop = stop;
-    // this.reset = reset;
-  }
-}
+// console.log(keys);
 
-let seconds = 0;
+// if ("style" in tabitha) console.log("yes");
 
-const timer = new StopWatch(
-  function incrementSeconds() {
-    seconds += 1;
-    setInterval(incrementSeconds, 1000);
-    console.log(seconds);
-  },
-  function () {
-    // console.log("duration");
-    return Date.now();
-  },
-  function () {
-    // console.log("stop");
-    return Date.now();
-  }
-);
+// class StopWatch {
+//   constructor(start, duration, stop, reset) {
+//     this.start = start;
+//     this.duration = duration;
+//     this.stop = stop;
+//     // this.reset = reset;
+//   }
+// }
 
-// console.log(timer.start());
+// let seconds = 0;
 
-setTimeout(() => console.log("Five"), 8000);
+// const timer = new StopWatch(
+//   function incrementSeconds() {
+//     seconds += 1;
+//     setInterval(incrementSeconds, 1000);
+//     console.log(seconds);
+//   },
+//   function () {
+//     // console.log("duration");
+//     return Date.now();
+//   },
+//   function () {
+//     // console.log("stop");
+//     return Date.now();
+//   }
+// );
 
-// create a promise
+// // console.log(timer.start());
 
-// const makethis = new Promise(() => {
-//   setTimeout(() => console.log("Two"), 2000);
-// })
-//   .then(() => {
-//     console.log("Threeeee");
-//   })
-//   .then(() => {
-//     throw new Error("Something failed");
-//   });
+// setTimeout(() => console.log("Five"), 8000);
 
-// console.log(makethis);
+// // create a promise
 
-// Input: nums = [1,2,3,4,5,6,7], k = 3
-// Output: [5,6,7,1,2,3,4]
-// Explanation:
-// rotate 1 steps to the right: [7,1,2,3,4,5,6]
-// rotate 2 steps to the right: [6,7,1,2,3,4,5]
-// rotate 3 steps to the right: [5,6,7,1,2,3,4]
+// // const makethis = new Promise(() => {
+// //   setTimeout(() => console.log("Two"), 2000);
+// // })
+// //   .then(() => {
+// //     console.log("Threeeee");
+// //   })
+// //   .then(() => {
+// //     throw new Error("Something failed");
+// //   });
 
-let nums = [1, 2, 3, 4, 5, 6, 7];
+// // console.log(makethis);
 
-let k = 3;
+// // Input: nums = [1,2,3,4,5,6,7], k = 3
+// // Output: [5,6,7,1,2,3,4]
+// // Explanation:
+// // rotate 1 steps to the right: [7,1,2,3,4,5,6]
+// // rotate 2 steps to the right: [6,7,1,2,3,4,5]
+// // rotate 3 steps to the right: [5,6,7,1,2,3,4]
 
-nums.pop(1);
+// let nums = [1, 2, 3, 4, 5, 6, 7];
 
-console.log(nums);
+// let k = 3;
 
-function rotate1(nums, k) {
-  for (let index = 0; index < array.length; index++) {
-    const element = nums.pop(nums.unshift);
-  }
-}
+// nums.pop(1);
 
-console.log(nums.reverse());
+// console.log(nums);
 
-var isPalindrome = function (s) {
-  let alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-  let trimmed = "";
-  for (let i = 0; i < s.length; i++) {
-    if (alpha.includes(s[i])) {
-      trimmed += s[i];
-    }
-  }
-  let reversed = trimmed.split("").reverse().join("");
-  return trimmed.toLowerCase() === reversed.toLowerCase();
-};
+// function rotate1(nums, k) {
+//   for (let index = 0; index < array.length; index++) {
+//     const element = nums.pop(nums.unshift);
+//   }
+// }
+
+// console.log(nums.reverse());
+
+// var isPalindrome = function (s) {
+//   let alpha = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+//   let trimmed = "";
+//   for (let i = 0; i < s.length; i++) {
+//     if (alpha.includes(s[i])) {
+//       trimmed += s[i];
+//     }
+//   }
+//   let reversed = trimmed.split("").reverse().join("");
+//   return trimmed.toLowerCase() === reversed.toLowerCase();
+// };
