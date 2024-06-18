@@ -17,30 +17,22 @@ async function initialLoad() {
   catUrl = `https://api.thecatapi.com/v1/breeds`;
 
   axios.get(catUrl).then((response) => {
-    console.log(response);
-    response.data.forEach((cat) => {
-      console.log(cat.id);
-      // Create new <options> & append them to breedSelect.
-      let options = document.createElement("option").appendChild(breedSelect);
-      console.log(options);
-      // value attribute equal to the id of the breed.
+    let catData = response.data;
+    catData.map((cat) => {
+      let options = document.createElement("options");
+      options.append(breedSelect);
       options.setAttribute("value", cat.id);
-      // shows name
-      options.innerText = cat.name;
+      options.textContent = cat.name;
+      console.log(options);
     });
   });
-
-  breedSelect.addEventListener("select", () => {
-    console.log("selected");
-  });
 }
-
 initialLoad();
-
-console.log(options);
 
 // /**
 //  * 2. Create an event handler for breedSelect that does the following:
+
+breedSelect.addEventListener((e) => {});
 
 //  * - Retrieve information on the selected breed from the cat API using fetch().
 //  *  - Make sure your request is receiving multiple array items!

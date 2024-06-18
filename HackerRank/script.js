@@ -205,3 +205,24 @@ aVeryBigSum([5, 1000000001, 1000000002, 1000000003, 1000000004, 1000000005]);
 //   let reversed = trimmed.split("").reverse().join("");
 //   return trimmed.toLowerCase() === reversed.toLowerCase();
 // };
+
+// axios.get(catUrl).then((response) => {
+//     let catData = response.data;
+//     // let catType = [];
+
+//     catData.map((cat) => {
+//       console.log(cat.name);
+//       console.log(cat.id);
+
+//       let options = document.createElement("options");
+
+//       options.appendChild(breedSelect);
+
+//       options.setAttribute("value", cat.id);
+//       options.textContent = cat.name;
+//       console.log(options);
+//       // catType.push({
+//       //   id: cat.id,
+//       //   name: cat.name,
+//       // });
+//     });
