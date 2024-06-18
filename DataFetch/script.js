@@ -24,6 +24,8 @@ async function initialLoad() {
       options.setAttribute("value", cat.id);
       options.textContent = cat.name;
       console.log(options);
+
+      breedSelect.addEventListener((e) => {});
     });
   });
 }
@@ -32,7 +34,7 @@ initialLoad();
 // /**
 //  * 2. Create an event handler for breedSelect that does the following:
 
-breedSelect.addEventListener((e) => {});
+breedSelect.addEventListener("select", () => {});
 
 //  * - Retrieve information on the selected breed from the cat API using fetch().
 //  *  - Make sure your request is receiving multiple array items!
