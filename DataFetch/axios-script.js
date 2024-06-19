@@ -35,11 +35,13 @@ async function initialLoad() {
         let catBreed = breedSelect.value;
         console.log(catBreed);
 
-        await fetch(
-          `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${catBreed}&api_key=${API_KEY}`
-        )
+        await axios
+          .get(
+            `https://api.thecatapi.com/v1/images/search?limit=10&breed_ids=${catBreed}&api_key=${API_KEY}`
+          )
           .then((response) => {
-            return response.json();
+            let catData = response.data;
+            return catData;
           })
           .then((catBreed) => {
             catBreed.map((element) => {
@@ -51,6 +53,7 @@ async function initialLoad() {
               carousel.append(catImage);
 
               item.innerHTML = `<h3>${element.breeds[0].name}</h3> <p>${element.breeds[0].description}</p><p>${element.breeds[0].temperament}</p>`;
+              carousel.append(catImage);
             });
             infoDump.appendChild(item);
           });
@@ -59,5 +62,9 @@ async function initialLoad() {
     });
   });
 }
+// let catData = response.data;
+//
+//
+// let catData = fetchCat.json();
 
 initialLoad();
