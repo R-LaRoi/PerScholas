@@ -1,7 +1,8 @@
 const breedSelect = document.getElementById("breedSelect");
 
 const infoDump = document.getElementById("infoDump");
-
+const catFaves = document.getElementById("cat-column");
+const faveBtn = document.getElementById("getFavouritesBtn");
 const progressBar = document.getElementById("progress-bar");
 
 const getFavouritesBtn = document.getElementById("getFavouritesBtn");
@@ -87,14 +88,21 @@ async function initialLoad() {
               catBreed.map((element) => {
                 console.log(element);
 
-                let catImage = element.url;
                 document
                   .getElementById("this-cat")
                   .setAttribute("src", element.url);
 
-                console.log(catImage);
-
                 infoDump.innerHTML = `<h3>${element.breeds[0].name}</h3> <p>${element.breeds[0].description}</p><p>${element.breeds[0].temperament}</p>`;
+
+                faveBtn.addEventListener("click", () => {
+                  let catPics = document.createElement("img");
+                  catPics.setAttribute("src", element.url);
+                  catPics.classList.add("this-cat");
+                  catPics.style.width = "50%";
+                  catPics.style.padding = "20px";
+
+                  catFaves.append(catPics);
+                });
               });
             });
         }
